@@ -1,6 +1,6 @@
-# DentalERP - Free Open Source Dental Clinic Management Software for India
+# DentalERP
 
-A comprehensive, AI-powered **dental hospital management system** built with Next.js 16, designed for **dental clinics and multi-branch hospital chains in India**. Includes GST-compliant billing, Razorpay/PhonePe/Paytm payments, patient portal, tele-dentistry, 16 AI skills, and more — completely **free and open source**.
+A comprehensive, AI-powered **dental hospital management system** built with Next.js 16, designed for **dental clinics and multi-branch hospital chains in India**. Includes GST-compliant billing, Razorpay/PhonePe/Paytm payments, patient portal, tele-dentistry, 16 AI skills, and more — completely.
 
 > **Looking for dental practice management software in India?** DentalERP is a free alternative to expensive proprietary dental software. Self-host it on your own server with full control over your patient data.
 
