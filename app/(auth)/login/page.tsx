@@ -66,8 +66,6 @@ function LoginForm() {
     }
   }
 
-<<<<<<< HEAD
-=======
   const handleQuickLogin = async () => {
     setIsLoading(true)
     try {
@@ -98,7 +96,6 @@ function LoginForm() {
     }
   }
 
->>>>>>> quick-login-update
   return (
     <Card className="shadow-lg">
       <CardHeader className="space-y-1 text-center">
@@ -146,8 +143,6 @@ function LoginForm() {
           </Button>
         </form>
 
-<<<<<<< HEAD
-=======
         <div className="mt-4 relative">
           <div className="absolute inset-0 flex items-center">
             <span className="w-full border-t" />
@@ -170,7 +165,6 @@ function LoginForm() {
           دخول سريع للتجربة (Quick Demo Login)
         </Button>
 
->>>>>>> quick-login-update
         <div className="mt-6 text-center text-sm">
           <p className="text-muted-foreground">
             Don&apos;t have an account?{" "}

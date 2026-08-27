@@ -21,8 +21,6 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
 
         const { email, password } = validated.data
 
-<<<<<<< HEAD
-=======
         // Bypass database for demo quick login
         if (email === "admin@demo-dental.com" && password === "Admin@123") {
           return {
@@ -36,7 +34,6 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
           }
         }
 
->>>>>>> quick-login-update
         const user = await prisma.user.findUnique({
           where: { email },
           include: {
