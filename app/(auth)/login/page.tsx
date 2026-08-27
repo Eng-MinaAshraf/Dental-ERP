@@ -66,6 +66,36 @@ function LoginForm() {
     }
   }
 
+  const handleQuickLogin = async () => {
+    setIsLoading(true)
+    try {
+      const result = await signIn("credentials", {
+        email: "admin@demo-dental.com",
+        password: "Admin@123",
+        redirect: false,
+      })
+
+      if (result?.error) {
+        toast({
+          variant: "destructive",
+          title: "Login failed",
+          description: "Invalid email or password. Please try again.",
+        })
+      } else {
+        router.push(callbackUrl)
+        router.refresh()
+      }
+    } catch {
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+      })
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
   return (
     <Card className="shadow-lg">
       <CardHeader className="space-y-1 text-center">
@@ -112,6 +142,28 @@ function LoginForm() {
             Sign in
           </Button>
         </form>
+
+        <div className="mt-4 relative">
+          <div className="absolute inset-0 flex items-center">
+            <span className="w-full border-t" />
+          </div>
+          <div className="relative flex justify-center text-xs uppercase">
+            <span className="bg-background px-2 text-muted-foreground">
+              Or
+            </span>
+          </div>
+        </div>
+
+        <Button 
+          type="button"
+          variant="outline" 
+          className="w-full mt-4 bg-primary/5 hover:bg-primary/10 border-primary/20 text-primary" 
+          onClick={handleQuickLogin}
+          disabled={isLoading}
+        >
+          {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+          دخول سريع للتجربة (Quick Demo Login)
+        </Button>
 
         <div className="mt-6 text-center text-sm">
           <p className="text-muted-foreground">
