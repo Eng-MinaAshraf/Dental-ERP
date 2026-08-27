@@ -91,9 +91,17 @@ export const config = {
      * - _next/static (static files)
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
+<<<<<<< HEAD
      * - public folder
      * - api routes that don't need auth
      */
     "/((?!_next/static|_next/image|favicon.ico|public|api/health).*)",
+=======
+     * - manifest.json (PWA manifest)
+     * - icons and images
+     * - api routes that don't need auth
+     */
+    "/((?!_next/static|_next/image|favicon.ico|manifest.json|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$|api/health).*)",
+>>>>>>> quick-login-update
   ],
 }
