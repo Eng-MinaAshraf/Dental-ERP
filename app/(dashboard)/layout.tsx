@@ -17,17 +17,26 @@ export default async function DashboardLayout({
   const hospitalId = session.user.hospitalId
 
   // Fetch hospital info
-  const hospital = hospitalId
-    ? await prisma.hospital.findUnique({
-        where: { id: hospitalId },
-        select: {
-          name: true,
-          plan: true,
-          logo: true,
-          onboardingCompleted: true,
-        },
-      })
-    : null
+  let hospital = null;
+  
+  if (hospitalId === "demo-hospital-id") {
+    hospital = {
+      name: "Demo Dental Clinic",
+      plan: "PREMIUM",
+      logo: null,
+      onboardingCompleted: true,
+    };
+  } else if (hospitalId) {
+    hospital = await prisma.hospital.findUnique({
+      where: { id: hospitalId },
+      select: {
+        name: true,
+        plan: true,
+        logo: true,
+        onboardingCompleted: true,
+      },
+    })
+  }
 
   // Redirect to onboarding if not complete (except if already on onboarding page)
   if (hospital && !hospital.onboardingCompleted) {
